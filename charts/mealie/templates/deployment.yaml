@@ -55,10 +55,12 @@ spec:
             containerPort: {{ .Values.mealie.service.port }}
             protocol: TCP
           livenessProbe:
+            initialDelaySeconds: {{ .Values.mealie.initialDelaySeconds }}
             httpGet:
               path: /api/app/about
               port: http
           readinessProbe:
+            initialDelaySeconds: {{ .Values.mealie.initialDelaySeconds }}
             httpGet:
               path: /api/app/about
               port: http

@@ -45,6 +45,9 @@ mealie:
 
   env: {}
 
+  # -- The initial delay for the liveness and readiness probes
+  initialDelaySeconds: 10
+
 ingress:
   enabled: false
   className: ""
