@@ -1,6 +1,6 @@
 # mealie
 
-![Version: 0.0.8](https://img.shields.io/badge/Version-0.0.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.0.0beta-5](https://img.shields.io/badge/AppVersion-v1.0.0beta--5-informational?style=flat-square)
+![Version: 0.0.9](https://img.shields.io/badge/Version-0.0.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.0](https://img.shields.io/badge/AppVersion-v1.4.0-informational?style=flat-square)
 
 A Helm chart for deploying Mealie to a Kubernetes cluster.
 
@@ -15,24 +15,14 @@ A Helm chart for deploying Mealie to a Kubernetes cluster.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| api.env | object | `{}` |  |
-| api.replicas | int | `1` | The number of api replicas to run. Only set above 1 if using postgres |
-| api.service.port | int | `9000` |  |
-| api.service.type | string | `"ClusterIP"` |  |
 | autoscaling.enabled | bool | `false` |  |
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| frontend.env | object | `{}` |  |
-| frontend.replicas | int | `1` | The number of frontend replicas to run |
-| frontend.service.port | int | `3000` |  |
-| frontend.service.type | string | `"ClusterIP"` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` | The pull policy for mealie images |
-| image.repository | string | `"hkotel/mealie"` | The repository for docker images to use |
+| image.repository | string | `"ghcr.io/mealie-recipes/mealie"` | The repository for docker images to use |
 | image.tag | string | `""` | Override the default app version with another version |
-| image.tagPrefixApi | string | `"api-"` | The tag prefix for the API images. The app version number will be appended to this. |
-| image.tagPrefixFrontend | string | `"frontend-"` | The tag prefix for the frontend docker images. The app version number will be appended to this. |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.className | string | `""` |  |
@@ -41,6 +31,10 @@ A Helm chart for deploying Mealie to a Kubernetes cluster.
 | ingress.hosts[0].paths[0].path | string | `"/"` |  |
 | ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
 | ingress.tls | list | `[]` |  |
+| mealie.env | object | `{}` |  |
+| mealie.replicas | int | `1` | The number of api replicas to run. Only set above 1 if using postgres |
+| mealie.service.port | int | `9000` |  |
+| mealie.service.type | string | `"ClusterIP"` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |

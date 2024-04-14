@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "mealie.fullname" . }}-api
+  name: {{ include "mealie.fullname" . }}
   labels:
     {{- include "mealie.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.api.service.type }}
+  type: {{ .Values.mealie.service.type }}
   ports:
-    - port: {{ .Values.api.service.port }}
-      targetPort: api
+    - port: {{ .Values.mealie.service.port }}
+      targetPort: http
       protocol: TCP
-      name: api
+      name: 
   selector:
     {{- include "mealie.selectorLabels" . | nindent 4 }}
     mealie.danielhall.me/is-api: "true"
