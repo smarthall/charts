@@ -8,12 +8,8 @@ metadata:
     "helm.sh/hook": test
 spec:
   containers:
-    - name: wget-frontend
+    - name: wget-mealie
       image: busybox
       command: ['wget']
-      args: ['http://{{ include "mealie.fullname" . }}-frontend:{{ .Values.frontend.service.port }}/favicon.ico']
-    - name: wget-api
-      image: busybox
-      command: ['wget']
-      args: ['http://{{ include "mealie.fullname" . }}-api:{{ .Values.api.service.port }}/api/app/about']
+      args: ['http://{{ include "mealie.fullname" . }}:{{ .Values.mealie.service.port }}/favicon.ico']
   restartPolicy: Never
