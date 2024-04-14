@@ -1,6 +1,6 @@
 # mealie
 
-![Version: 0.0.9](https://img.shields.io/badge/Version-0.0.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.0](https://img.shields.io/badge/AppVersion-v1.4.0-informational?style=flat-square)
+![Version: 0.0.10](https://img.shields.io/badge/Version-0.0.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.0](https://img.shields.io/badge/AppVersion-v1.4.0-informational?style=flat-square)
 
 A Helm chart for deploying Mealie to a Kubernetes cluster.
 
@@ -32,6 +32,7 @@ A Helm chart for deploying Mealie to a Kubernetes cluster.
 | ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
 | ingress.tls | list | `[]` |  |
 | mealie.env | object | `{}` |  |
+| mealie.initialDelaySeconds | int | `10` | The initial delay for the liveness and readiness probes |
 | mealie.replicas | int | `1` | The number of api replicas to run. Only set above 1 if using postgres |
 | mealie.service.port | int | `9000` |  |
 | mealie.service.type | string | `"ClusterIP"` |  |
